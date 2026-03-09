@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Lab Science Diagnostics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/molecular.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-900">
+
+    <div class="bg-red-600 py-2 px-6 text-white text-xs flex justify-between items-center">
+        <div>
+            <span class="mr-4"><i class="fas fa-phone-alt mr-1"></i> 09638 224400</span>
+            <span class="hidden md:inline"><i class="fas fa-envelope mr-1"></i> info@labsciencebd.com</span>
+        </div>
+        <div class="flex space-x-4">
+            <i class="fab fa-facebook-f cursor-pointer hover:text-gray-200"></i>
+            <i class="fab fa-instagram cursor-pointer hover:text-gray-200"></i>
+            <i class="fab fa-linkedin-in cursor-pointer hover:text-gray-200"></i>
+        </div>
+    </div>
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="images/logo.png" alt="Lab Science Logo" class="h-14"> </div>
+            <ul class="hidden md:flex space-x-8 font-bold text-sm uppercase tracking-wide">
+                <li><a href="index.html" class="text-gray-700 hover:text-red-600 transition">Home</a></li>
+                <li><a href="services.html" class="text-red-600 border-b-2 border-red-600 pb-1">Services</a></li>
+                <li><a href="doctors.html" class="text-gray-700 hover:text-red-600 transition">Doctors</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-red-600 transition">About Us</a></li>
+            </ul>
+            <button class="bg-red-600 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-red-700 transition">Appointment</button>
+        </div>
+    </nav>
+
+    <section class="hero-section h-80 flex flex-col justify-center items-center text-white">
+        <h1 class="text-5xl font-extrabold tracking-tight">Our Services</h1>
+        <div class="h-1 w-20 bg-red-600 mt-4"></div>
+        <p class="mt-4 text-lg font-light text-gray-200">Home / <span class="text-red-500 font-medium">Services</span></p>
+    </section>
+
+    <section class="container mx-auto px-6 py-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            
+            <div class="service-card bg-white rounded-xl shadow-xl overflow-hidden border-t-4 border-red-600">
+                <img src="images/molecular.jpg" class="w-full h-60 object-cover"> <div class="p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-800 uppercase">Diagnostic Molecular Tests</h3>
+                    <p class="text-gray-500 mt-2 text-sm">Advanced DNA/RNA based testing solutions.</p>
+                </div>
+            </div>
+
+            <div class="service-card bg-white rounded-xl shadow-xl overflow-hidden border-t-4 border-red-600">
+                <img src="images/consultation.jpg" class="w-full h-60 object-cover"> <div class="p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-800 uppercase">Specialist Consultation</h3>
+                    <p class="text-gray-500 mt-2 text-sm">Expert advice from top medical specialists.</p>
+                </div>
+            </div>
+
+            <div class="service-card bg-white rounded-xl shadow-xl overflow-hidden border-t-4 border-red-600">
+                <img src="images/Corporate Care Solutions.jpg" class="w-full h-60 object-cover"> <div class="p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-800 uppercase">Corporate Care Solutions</h3>
+                    <p class="text-gray-500 mt-2 text-sm">Tailored healthcare plans for organizations.</p>
+                </div>
+            </div>
+
+            <div class="service-card bg-white rounded-xl shadow-xl overflow-hidden border-t-4 border-red-600">
+                <img src="images/Health Checks.jpg" class="w-full h-60 object-cover"> <div class="p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-800 uppercase">Health Checks & Packages</h3>
+                    <p class="text-gray-500 mt-2 text-sm">Comprehensive routine health screening.</p>
+                </div>
+            </div>
+
+            <div class="service-card bg-white rounded-xl shadow-xl overflow-hidden border-t-4 border-red-600">
+                <img src="images/Vaccination Services.jpg" class="w-full h-60 object-cover"> <div class="p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-800 uppercase">Vaccination Services</h3>
+                    <p class="text-gray-500 mt-2 text-sm">Safe and effective immunization programs.</p>
+                </div>
+            </div>
+
+            <div class="service-card bg-white rounded-xl shadow-xl overflow-hidden border-t-4 border-red-600">
+                <img src="images/Reference Lab.jpg" class="w-full h-60 object-cover"> <div class="p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-800 uppercase">Reference Lab</h3>
+                    <p class="text-gray-500 mt-2 text-sm">High-end diagnostic support for other labs.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <img src="images/logo.png" alt="Logo" class="h-16 mb-6 brightness-200"> <p class="text-gray-400 leading-relaxed">LAB SCIENCE is an international standard diagnostic center, dedicated solely to precise diagnosis and care.</p>
+            </div>
+            <div class="md:pl-10">
+                <h3 class="text-xl font-bold mb-6 text-red-500">Quick Contact</h3>
+                <ul class="space-y-4 text-gray-400">
+                    <li><i class="fas fa-map-marker-alt text-red-600 mr-2"></i> 153/1, Green Road, Dhaka-1205</li>
+                    <li><i class="fas fa-phone text-red-600 mr-2"></i> 09638-224400</li>
+                    <li><i class="fas fa-envelope text-red-600 mr-2"></i> info@labsciencebd.com</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-6 text-red-500">Newsletter</h3>
+                <p class="text-gray-400 mb-4 text-sm">Subscribe to get health tips and updates.</p>
+                <div class="flex">
+                    <input type="email" placeholder="Email Address" class="bg-gray-800 border-none px-4 py-3 text-sm w-full focus:ring-2 focus:ring-red-600 outline-none">
+                    <button class="bg-red-600 px-6 py-3 font-bold hover:bg-red-700 transition">JOIN</button>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-16 pt-8 border-t border-gray-800 text-gray-500 text-sm">
+            &copy; 2026 Lab Science Diagnostics. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
