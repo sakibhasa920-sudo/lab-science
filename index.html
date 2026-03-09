@@ -1,173 +1,130 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab Science Diagnostics - Premium Care</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4fcf7; color: #333; overflow-x: hidden; padding-bottom: 80px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab Science Diagnostics - Premium Care</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4fcf7; color: #333; overflow-x: hidden; padding-bottom: 100px; }
 
-        /* Top Bar */
-        .top-bar {
-            background-color: #1a4d32;
-            color: white;
-            padding: 10px 5%;
-            display: flex;
-            justify-content: space-between;
-            font-size: 11px;
-        }
+/* Top Bar */
+.top-bar { background-color: #1a4d32; color: white; padding: 10px 5%; display: flex; justify-content: space-between; font-size: 13px; }
+.top-bar i { font-size:18px; margin-right:5px; }
 
-        /* Header */
-        header {
-            background: white;
-            padding: 10px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .logo img { height: 45px; object-fit: contain; }
-        nav { display: none; } /* ফোনে সাধারণ মেনু হাইড রাখা হয়েছে */
+/* Header */
+header { background: white; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+.logo img { height: 60px; object-fit: contain; }
+nav a { margin:0 10px; text-decoration:none; color:red; font-weight:600; letter-spacing:0.5px; font-size:15px; }
 
-        /* Hero Section */
-        .hero {
-            display: flex;
-            flex-direction: column; /* ফোনে ওপর নিচে হবে */
-            align-items: center;
-            padding: 30px 5%;
-            text-align: center;
-        }
-        .hero-content { width: 100%; padding-right: 0; margin-bottom: 30px; }
-        .hero-content h4 { color: #03A84E; font-size: 14px; margin-bottom: 10px; }
-        .hero-content h1 { font-size: 28px; line-height: 1.2; color: #1a4d32; margin-bottom: 15px; }
-        .hero-content p { font-size: 15px; color: #555; margin-bottom: 25px; }
+/* Hero Section */
+.hero { display:flex; flex-direction:column; align-items:center; padding:30px 5%; text-align:center; }
+.hero-content { width:100%; margin-bottom:30px; }
+.hero-content h4 { color:#03A84E; font-size:14px; margin-bottom:10px; }
+.hero-content h1 { font-size:28px; line-height:1.2; color:#1a4d32; margin-bottom:15px; }
+.hero-content p { font-size:15px; color:#555; margin-bottom:25px; }
+.btn { padding:12px 25px; border-radius:50px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin:5px; }
+.btn-green { background:#03A84E; color:white; }
+.btn-outline { border:2px solid #1a4d32; color:#1a4d32; }
 
-        /* Buttons */
-        .btn { padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 14px; display: inline-block; margin: 5px; }
-        .btn-green { background: #03A84E; color: white; }
-        .btn-outline { border: 2px solid #1a4d32; color: #1a4d32; }
+/* Hero Image */
+.hero-image { width:100%; display:flex; justify-content:center; }
+.circle-frame { width:280px; height:280px; border-radius:50%; overflow:hidden; border:8px solid white; box-shadow:0 10px 25px rgba(0,0,0,0.1); }
+.circle-frame img { width:100%; height:100%; object-fit:cover; }
 
-        /* Hero Image - ফোনের জন্য সাইজ ঠিক করা */
-        .hero-image { width: 100%; display: flex; justify-content: center; }
-        .circle-frame {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 8px solid white;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        .circle-frame img { width: 100%; height: 100%; object-fit: cover; }
+/* Bottom Nav */
+.bottom-nav { background:#1a4d32; display:flex; justify-content:space-around; padding:10px 0; position:fixed; bottom:0; width:100%; z-index:999; }
+.nav-box { color:white; text-align:center; flex:1; transition:0.3s; font-size:11px; cursor:pointer; display:flex; flex-direction:column; align-items:center; }
+.nav-box i { display:block; font-size:18px; margin-bottom:3px; }
 
-        /* Bottom Menu - ফোনের জন্য সুন্দর করা */
-        .bottom-nav {
-            background: #1a4d32;
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            z-index: 999;
-        }
-        .nav-box { color: white; text-align: center; flex: 1; transition: 0.3s; font-size: 9px; }
-        .nav-box i { display: block; font-size: 18px; margin-bottom: 3px; }
+/* WhatsApp Button */
+.whatsapp-float { position: fixed; bottom:85px; right:20px; background-color:#25d366; color:#FFF; border-radius:50px; width:50px; height:50px; display:flex; align-items:center; justify-content:center; font-size:25px; z-index:10000; box-shadow:2px 2px 10px rgba(0,0,0,0.2); }
 
-        /* WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 85px; 
-            right: 20px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 25px;
-            z-index: 10000;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-        }
+/* Live Chat Premium Styling */
+.nav-box.live-chat { background:#fff; border-radius:12px; padding:6px 4px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; transition: transform 0.3s, box-shadow 0.3s; border:1px solid #ff0000; }
+.nav-box.live-chat i { font-size:18px; color:#ff0000; }
+.nav-box.live-chat span:first-of-type { font-weight:700; font-size:14px; color:#ff0000; }
+.nav-box.live-chat span:last-of-type { font-size:10px; font-weight:500; color:#333; margin-top:2px; text-align:center; }
+.nav-box.live-chat:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(255,0,0,0.25); }
 
-        /* বড় স্ক্রিন বা ল্যাপটপের জন্য ডিজাইন ঠিক করা */
-        @media (min-width: 768px) {
-            .hero { flex-direction: row; text-align: left; padding: 60px 8%; }
-            .hero-content { flex: 1; padding-right: 40px; }
-            .hero-content h1 { font-size: 45px; }
-            .circle-frame { width: 450px; height: 450px; }
-            nav { display: block; }
-            .logo img { height: 60px; }
-            .top-bar { font-size: 13px; }
-            .nav-box { font-size: 11px; }
-        }
-    </style>
+/* Responsive */
+@media (min-width:768px){ .hero { flex-direction:row; text-align:left; padding:60px 8%; } .hero-content { flex:1; padding-right:40px; } .hero-content h1 { font-size:45px; } .circle-frame { width:450px; height:450px; } nav { display:block; } .logo img { height:60px; } .top-bar { font-size:13px; } .nav-box { font-size:11px; } }
+</style>
 </head>
 <body>
 
-    <div class="top-bar">
-        <div><i class="fas fa-phone-alt"></i> 09638 224400</div>
-        <div><i class="fab fa-facebook-f"></i> <i class="fab fa-youtube"></i></div>
+<div class="top-bar">
+    <div><i class="fas fa-phone-alt"></i> 09638 224400</div>
+    <div><i class="fab fa-facebook-f"></i> <i class="fab fa-youtube"></i></div>
+</div>
+
+<header>
+    <div class="logo"><img src="logo.png" alt="Logo"></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="doctors.html">Doctors</a>
+        <a href="#">About Us</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h4>Collecting Samples with care</h4>
+        <h1>Bringing Laboratory Precision to Your Doorstep</h1>
+        <p>আমাদের দক্ষ টেকনিশিয়ানরা সরাসরি আপনার বাসা থেকে স্যাম্পল কালেকশন করে থাকে।</p>
+        <div class="btn-group">
+            <a href="#" class="btn btn-green">Order Test <i class="fas fa-chevron-right"></i></a>
+            <a href="tel:09638224400" class="btn btn-outline">Call Now</a>
+        </div>
     </div>
-
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Logo"> 
+    <div class="hero-image">
+        <div class="circle-frame">
+            <img src="lab.jpg" alt="Lab Image">
         </div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Services</a>
-            <a href="#">Doctors</a>
-            <a href="#">About Us</a>
-        </nav>
-    </header>
+    </div>
+</section>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h4>Collecting Samples with care</h4>
-            <h1>Bringing Laboratory Precision to Your Doorstep</h1>
-            <p>আমাদের দক্ষ টেকনিশিয়ানরা সরাসরি আপনার বাসা থেকে স্যাম্পল কালেকশন করে থাকে।</p>
-            
-            <div class="btn-group">
-                <a href="#" class="btn btn-green">Order Test <i class="fas fa-chevron-right"></i></a>
-                <a href="tel:09638224400" class="btn btn-outline">Call Now</a>
-            </div>
-        </div>
+<a href="https://wa.me/8801577024225?text=Hello! I want to book a test serial." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-        <div class="hero-image">
-            <div class="circle-frame">
-                <img src="lab.jpg" alt="Lab Image"> 
-            </div>
-        </div>
-    </section>
-
-    <a href="https://wa.me/8801577024225?text=Hello! I want to book a test serial." class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+<!-- Bottom Nav -->
+<div class="bottom-nav">
+    <a href="https://wa.me/8801577024225?text=Hello! I want to book an appointment." class="nav-box" target="_blank">
+        <i class="fas fa-calendar-check"></i>
+        <span>Appointment</span>
     </a>
-
-    <div class="bottom-nav">
-        <div class="nav-box"><i class="fas fa-calendar-check"></i><span>Appointment</span></div>
-        <div class="nav-box"><i class="fas fa-user-md"></i><span>Find Doctor</span></div>
-        <div class="nav-box"><i class="fas fa-vial"></i><span>Home Sample</span></div>
-        <div class="nav-box"><i class="fas fa-file-medical-alt"></i><span>Reports</span></div>
+    <a href="doctors.html" class="nav-box">
+        <i class="fas fa-user-md"></i>
+        <span>Find Doctor</span>
+    </a>
+    <a href="javascript:void(0)" class="nav-box" onclick="Tawk_API.maximize();">
+        <i class="fas fa-vial"></i>
+        <span>Home Sample</span>
+    </a>
+    <div class="nav-box">
+        <i class="fas fa-file-medical-alt"></i>
+        <span>Reports</span>
     </div>
+    <a href="javascript:void(0)" class="nav-box live-chat" onclick="Tawk_API.maximize();">
+        <div style="display:flex; align-items:center; gap:6px;">
+            <i class="fas fa-comment-dots"></i>
+            <span>Live Chat</span>
+        </div>
+        <span>সরাসরি সহায়তা, যেকোনো সময় আপনার পাশে</span>
+    </a>
+</div>
 
-    <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/69ad5585c6ed421c36a3fd62/1jj6hc508';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-        })();
-    </script>
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/69ad5585c6ed421c36a3fd62/1jj6hc508';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 </body>
 </html>
